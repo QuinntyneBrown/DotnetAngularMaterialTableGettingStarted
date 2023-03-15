@@ -1,0 +1,16 @@
+<mat-table [dataSource]="vm.packets" *ngIf="vm$ | async as vm">
+
+    <ng-container matColumnDef="messageType">
+        <mat-header-cell *matHeaderCellDef> MessageType </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.MessageType }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created">
+        <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.Created }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="vm.displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: vm.displayedColumns;"></mat-row>
+
+</mat-table>
